@@ -5,21 +5,18 @@ function* myGenerator() {
         for(i = 1; i <= 5; i++)  { 
             x=i; 
             yield x;
-        fifteenArray.push(x);
     }
 }
     function* insideGenerator2() {
         for( i = 10; i <= 15; i++) {
          x=i;
         yield x;
-        fifteenArray.push(x);
     }
 }
     function* insideGenerator3() {
         for( i = 6; i <= 9; i++) {
             x = i;
             yield x;
-           fifteenArray.push(x);
     }
 }
 
@@ -30,8 +27,17 @@ function* myGenerator() {
 }
 
 const iterator = myGenerator();
+for(i = 1; i <= 5; i++)  {
+    console.log(iterator.next().fifteenArray.push(i));
+}
+for( i = 10; i <= 15; i++) {
+console.log(iterator.next().fifteenArray.push(i));
+}
+for( i = 6; i <= 9; i++) {
+console.log(iterator.next().fifteenArray.push(i));
+}
 for(i=0; i < 15; i++) {
-    console.log(iterator.next().fifteenArray.join('#, ));
+    console.log(iterator.next().fifteenArray.join('#, '));
 }
 
 module.exports = { fifteenArray, myGenerator };
