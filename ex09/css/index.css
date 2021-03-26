@@ -74,6 +74,7 @@ header .highlight, header .current a{
     background: url('../img/gigi-logo.png') no-repeat;
     text-align: center;
     color: #fff;
+    filter: grayscale(100%);
 }
 
 #showcase h1{
