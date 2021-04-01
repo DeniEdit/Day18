@@ -1,4 +1,3 @@
-let fifteenArray = [];
 function* myGenerator() {
     function* insideGenerator1() {
         var x;
@@ -27,17 +26,10 @@ function* myGenerator() {
 }
 
 const iterator = myGenerator();
-for(i = 1; i <= 5; i++)  {
-    console.log(iterator.next().fifteenArray.push(i));
-}
-for( i = 10; i <= 15; i++) {
-console.log(iterator.next().fifteenArray.push(i));
-}
-for( i = 6; i <= 9; i++) {
-console.log(iterator.next().fifteenArray.push(i));
-}
-for(i=0; i < 15; i++) {
-    console.log(iterator.next().fifteenArray.join('#, '));
+let fifteenArray = [];
+for(let i = 0; i < 16; i++)  {
+    let iter = iterator.next();
+    fifteenArray[i] = iter.value + (iter.done ? "!" : "#");
 }
 
 module.exports = { fifteenArray, myGenerator };
